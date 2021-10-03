@@ -7,17 +7,22 @@ public class AreaEntrance : MonoBehaviour
 
     public string transitionName;
 
-    // Start is called before the first frame update
-    void Start() {
+   void Start() {
         if(transitionName == PlayerController.instance.areaTransitionName)
         {
-            PlayerController.instance.transform.position = transform.position;
+            Vector3 playerPos = transform.position;
+            playerPos.z = 0;
+            PlayerController.instance.transform.position = playerPos;
+            StartCoroutine(FollowCamIssueWorkaround());
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator FollowCamIssueWorkaround()
     {
-        
+        yield return new WaitForSeconds(0.01f);
+        Debug.Log("object enabled");
+        PlayerController.instance.gameObject.SetActive(true);
+        // cinemachineConfiner.m_BoundingShape2D
     }
 }
+

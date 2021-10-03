@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     // this
     [Header("Cinemachine Cam")]
     public CinemachineVirtualCamera vcam;
+    
+    // public Collider2D boundary;
 
     // Start is called before the first frame update
     void Start() {
@@ -30,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
         // this
         vcam.Follow = gameObject.transform;
+
+        // try to set the confiner boundingShape2D attripute on load
+        // vcam.cinemachineConfiner.m_BoundingShape2D = boundary;
         DontDestroyOnLoad(gameObject);
     }
 

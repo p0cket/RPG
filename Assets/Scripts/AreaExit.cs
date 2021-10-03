@@ -31,11 +31,14 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(areaToLoad);
-
+            Debug.Log("new scene loaded");
             PlayerController.instance.areaTransitionName = areaTransitionName;
+            Debug.Log("object disabled");
+            PlayerController.instance.gameObject.SetActive(false);
         }
     }
 }
+
