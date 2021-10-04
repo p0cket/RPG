@@ -9,13 +9,9 @@ using UnityEngine.SceneManagement;
 public class AreaExit : MonoBehaviour
 {
     public string areaToLoad;
-
     public string areaTransitionName;
 
     public AreaEntrance theEntrance;
-    // // this
-    // [Header("Cinemachine Cam")]
-    // public CinemachineVirtualCamera vcam;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +30,8 @@ public class AreaExit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(areaToLoad);
-            Debug.Log("new scene loaded");
             PlayerController.instance.areaTransitionName = areaTransitionName;
-            Debug.Log("object disabled");
-            PlayerController.instance.gameObject.SetActive(false);
+            // PlayerController.instance.gameObject.SetActive(false);
         }
     }
 }

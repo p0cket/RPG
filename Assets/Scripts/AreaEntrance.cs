@@ -10,19 +10,8 @@ public class AreaEntrance : MonoBehaviour
    void Start() {
         if(transitionName == PlayerController.instance.areaTransitionName)
         {
-            Vector3 playerPos = transform.position;
-            playerPos.z = 0;
-            PlayerController.instance.transform.position = playerPos;
-            StartCoroutine(FollowCamIssueWorkaround());
+            PlayerController.instance.transform.position = transform.position;
         }
-    }
-
-    private IEnumerator FollowCamIssueWorkaround()
-    {
-        yield return new WaitForSeconds(0.01f);
-        Debug.Log("object enabled");
-        PlayerController.instance.gameObject.SetActive(true);
-        // cinemachineConfiner.m_BoundingShape2D
     }
 }
 

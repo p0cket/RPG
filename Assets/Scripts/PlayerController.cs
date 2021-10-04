@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// this
-using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,14 +12,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     public string areaTransitionName;
-
-    // this
-    [Header("Cinemachine Cam")]
-    public CinemachineVirtualCamera vcam;
     
-    // public Collider2D boundary;
-
-    // Start is called before the first frame update
     void Start() {
         if(instance == null)
         {
@@ -30,11 +21,6 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // this
-        vcam.Follow = gameObject.transform;
-
-        // try to set the confiner boundingShape2D attripute on load
-        // vcam.cinemachineConfiner.m_BoundingShape2D = boundary;
         DontDestroyOnLoad(gameObject);
     }
 
