@@ -1,0 +1,28 @@
+#SAY.GameObject.4.
+<link="shake">shake, shake, shake, sure</link>
+<link="wiggle">wiggle, wiggle, wiggle, yeah</link>
+<link="wave">wave, wave, wave, alright</link>
+<link="pivot">pivot, pivot, pivot, OK</link>
+<link="rainbow">rainbow!</link>
+
+#SAY.GameObject.7.
+test{link="shake"}shake{/link}test{link="wiggle"}wiggle{/link}
+
+#SAY.GameObject.8.
+<link="rainbow">rainbow!</link>
+<link="ascend">going up</link>
+<link="pulse"><color=#bbee22>Glowing</color></link>
+
+#SAY.GameObject.2.
+{link="wave"}pivot, pivot, pivot, OK{/link} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#SAY.GameObject.3.
+{link="shake"}shake, shake, 
+shake, sure{/link}
+
+#SAY.GameObject.6.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#SAY.GameObject.5.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
