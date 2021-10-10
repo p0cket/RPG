@@ -29,9 +29,12 @@ public class triggerFungusBlock : MonoBehaviour
     {
         // if there is a `sayDialog` active, set the playerController's canMove to false.
         if(ourDialog.activeInHierarchy){
-            PlayerController.instance.canMove = false;
+            //old code said stop moving the player, new code says tell Game Manager the dialog is active.
+            // PlayerController.instance.canMove = false;
+            GameManager.instance.dialogActive = true;
         } else {
-            PlayerController.instance.canMove = true;
+            // PlayerController.instance.canMove = true;
+            GameManager.instance.dialogActive = false;
         }
     }
 
