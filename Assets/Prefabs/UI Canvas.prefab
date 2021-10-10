@@ -2609,6 +2609,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMenu: {fileID: 7364447336253300094}
+  nameText:
+  - {fileID: 7427276571706955718}
+  - {fileID: 3664801412794533086}
+  - {fileID: 253178187483375158}
+  hpText:
+  - {fileID: 4589912870322838566}
+  - {fileID: 4169620644527550429}
+  - {fileID: 1256552399715867295}
+  mpText:
+  - {fileID: 3115057561391885684}
+  - {fileID: 221247616432707009}
+  - {fileID: 4004052134318338893}
+  lvlText:
+  - {fileID: 1919266143523668974}
+  - {fileID: 2956218201237801622}
+  - {fileID: 8766725313985064104}
+  expText:
+  - {fileID: 6247070769750751354}
+  - {fileID: 4133597677721009232}
+  - {fileID: 2245681284922513262}
+  expSlider:
+  - {fileID: 8010843296960703442}
+  - {fileID: 2213295791435615894}
+  - {fileID: 914277152433928356}
+  charImage:
+  - {fileID: 3974772921881295324}
+  - {fileID: 1823175480124590295}
+  - {fileID: 956019394634392954}
+  charStatHolder:
+  - {fileID: 6767136835565214586}
+  - {fileID: 1918618372120049115}
+  - {fileID: 2897285021560340205}
 --- !u!1 &5218473241888109057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,7 +3619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.2442, y: 7.9563}
+  m_AnchoredPosition: {x: -2.2441406, y: 7.956299}
   m_SizeDelta: {x: -99.2502, y: -55.8057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3332808601054278552
