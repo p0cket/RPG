@@ -7,6 +7,7 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject UIScreen;
     public GameObject player;
     public GameObject gameMan;
+    public GameObject soundMan;
     void Awake()
     {
         if(UIFade.instance == null){
@@ -17,6 +18,9 @@ public class EssentialsLoader : MonoBehaviour
         }
         if(GameManager.instance == null){
             Instantiate(gameMan);
+        }
+        if(AudioManager.instance == null){
+            Instantiate(soundMan);
         }
     }
 

@@ -218,4 +218,16 @@ public class GameMenu : MonoBehaviour
         activeItem.use(selectChar);
         CloseItemCharChoice();
     }
+
+    public void SaveGame()
+    {
+        GameManager.instance.SaveData();
+        QuestManager.instance.SaveQuestData();
+    }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.instance.PlaySFX(0);
+    }
+
 }
