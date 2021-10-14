@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
-    void Start() {
+    void Awake() {
         if(instance == null)
         {
             instance = this;

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CharStats[] playerStats;
-    public bool gameMenuOpen, dialogActive, fadeBetweenAreas, shopActive;
+    public bool gameMenuOpen, dialogActive, fadeBetweenAreas, shopActive, battleActive;
 
     public string[] itemsHeld;
     public int[] numberOfItems;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameMenuOpen || dialogActive || fadeBetweenAreas || shopActive){
+        if(gameMenuOpen || dialogActive || fadeBetweenAreas || shopActive || battleActive){
             PlayerController.instance.canMove = false;
         } else
         {
@@ -173,8 +173,10 @@ public class GameManager : MonoBehaviour
         //Save Character Info
         for(int i = 0; i < playerStats.Length; i++)
         {
+
             if(playerStats[i].gameObject.activeInHierarchy)
             {
+
                 PlayerPrefs.SetInt("Player_" + playerStats[i].charName + "_active", 1);
             } else
             {
@@ -210,6 +212,7 @@ public class GameManager : MonoBehaviour
         {
             if(PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_active") == 0)
             {
+
                 playerStats[i].gameObject.SetActive(false);
             } else
             {
