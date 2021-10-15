@@ -1181,6 +1181,29 @@ MonoBehaviour:
   currentTurn: 0
   turnWaiting: 0
   uiButtonsHolder: {fileID: 1219456119}
+  movesList:
+  - moveName: Slash
+    movePower: 40
+    moveCost: 0
+    theEffect: {fileID: 6643282568413464948, guid: a184b50dacd3e43808b628db493e4b24, type: 3}
+  - moveName: Fire
+    movePower: 50
+    moveCost: 5
+    theEffect: {fileID: 2405855779490499242, guid: abf1f88142e614fb4b1d6be95ecffade, type: 3}
+  enemyAttackEffect: {fileID: 2010302494979188691, guid: 5a5b538255892444a8a873f146a482a1, type: 3}
+  theDamageNumber: {fileID: 878087229711623698, guid: a4d8e1de06a9c4939a62b3ee37954f46, type: 3}
+  playerName:
+  - {fileID: 449467123}
+  - {fileID: 465917322}
+  - {fileID: 830866856}
+  playerHP:
+  - {fileID: 1672672220}
+  - {fileID: 1492123449}
+  - {fileID: 209238202}
+  playerMP:
+  - {fileID: 1172449257}
+  - {fileID: 238457143}
+  - {fileID: 645061169}
 --- !u!1 &449467121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597601037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 438583773}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayerAttack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slash
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597601037
 MonoBehaviour:
   m_ObjectHideFlags: 0
