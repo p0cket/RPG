@@ -18,6 +18,6 @@ public class BattleTargetButton : MonoBehaviour
 
     public void Press()
     {
-        BattleManager.intstance.PlayerAttack(moveName, activeBattlerTarget);
+        BattleManager.instance.PlayerAttack(moveName, activeBattlerTarget);
     }
 }

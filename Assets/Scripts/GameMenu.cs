@@ -218,7 +218,7 @@ public class GameMenu : MonoBehaviour
 
     public void UseItem(int selectChar)
     {
-        activeItem.use(selectChar);
+        activeItem.Use(selectChar);
         CloseItemCharChoice();
     }
 

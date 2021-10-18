@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
         
     }
 
-    public void use(int charToUseOn)
+    public void Use(int charToUseOn)
     {
         CharStats selectedChar = GameManager.instance.playerStats[charToUseOn];
 

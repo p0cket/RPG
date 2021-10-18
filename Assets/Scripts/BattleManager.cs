@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
-    public static BattleManager intstance;
+    public static BattleManager instance;
 
     private bool battleActive;
     public GameObject battleScene;
@@ -29,9 +29,32 @@ public class BattleManager : MonoBehaviour
 
     public GameObject targetMenu;
     public BattleTargetButton[] targetButtons; 
+
+    public GameObject magicMenu;
+
+    public GameObject itemMenu;
+    public BattleMagicSelect[] magicButtons;
+
+    public BattleNotification battleNotice;
+    
+    public int chanceToFlee = 25;
+
+    public ItemButton[] itemButtons;
+
+    public Item activeItem;
+    public Text useButtonText;
+    public Text itemName;
+    public Text itemDescription;
+
+    //
+    public int currentActiveBattler;
+    //
+    public Text[] charName, charHP, charMP, lvlText, expText;
+
+
     void Start()
     {
-       intstance = this;
+       instance = this;
        DontDestroyOnLoad(gameObject);
     }
 
@@ -240,10 +263,12 @@ public class BattleManager : MonoBehaviour
         float atkPwr = activeBattlers[currentTurn].strength + activeBattlers[currentTurn].wpnPower;
         float defPwr = activeBattlers[target].defence + activeBattlers[target].armrPower;
 
-        float damageCalc = (atkPwr / defPwr) * movePower * Random.Range(.9f, 1.1f);
+        float randomRangeNumber = Random.Range(.9f, 1.1f);
+        float damageCalc = (atkPwr / defPwr) * movePower * randomRangeNumber;
         int damageToGive = Mathf.RoundToInt(damageCalc);
 
-        Debug.Log(activeBattlers[currentTurn].charName + " is dealing " + damageCalc + "(" + damageToGive + ") damager to " + activeBattlers[target].charName);
+        Debug.Log(activeBattlers[currentTurn].charName + " with (atkPwr/defPwr) * movePower * rrN:");
+        Debug.Log(activeBattlers[currentTurn].charName + " with (" + atkPwr + "/" + defPwr +  ") * " + movePower + " * " + randomRangeNumber + ":  is dealing " + damageCalc + "(" + damageToGive + ") damager to " + activeBattlers[target].charName);
         activeBattlers[target].currentHP -= damageToGive;
 
         Instantiate(theDamageNumber, activeBattlers[target].transform.position, activeBattlers[target].transform.rotation).SetDamage(damageToGive);
@@ -326,4 +351,139 @@ public class BattleManager : MonoBehaviour
             }
         }
     }
+
+    public void OpenMagicMenu()
+    {
+        magicMenu.SetActive(true);
+
+        for(int i = 0; i < magicButtons.Length; i++)
+        {
+            if(activeBattlers[currentTurn].movesAvailable.Length > i)
+            {
+                magicButtons[i].gameObject.SetActive(true);
+
+                magicButtons[i].spellName = activeBattlers[currentTurn].movesAvailable[i];
+                magicButtons[i].nameText.text = magicButtons[i].spellName;
+
+                for(int j = 0; j < movesList.Length; j++)
+                {
+                    if(movesList[j].moveName == magicButtons[i].spellName)
+                    {
+                        magicButtons[i].spellCost = movesList[j].moveCost;
+                        magicButtons[i].costText.text = magicButtons[i].spellCost.ToString();
+                    }
+                }
+            } else
+            {
+                magicButtons[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    public void Flee()
+    {
+        int fleeSuccess = Random.Range(0, 100);
+        if(fleeSuccess < chanceToFlee)
+        {
+            //end the battle
+            battleActive = false;
+            battleScene.SetActive(false);
+        } else 
+        {
+            NextTurn();
+            battleNotice.theText.text = "Couldn't escape!";
+            battleNotice.Activate();
+        }
+    }
+
+    public void OpenItemMenu()
+    {
+        GameManager.instance.SortItems();
+        itemMenu.SetActive(true);
+    }
+//
+       public void ShowItems()
+    {
+        GameManager.instance.SortItems();
+ 
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].buttonValue = i;
+ 
+            if (GameManager.instance.itemsHeld[i] != "")
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }
+            else
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void SelectItem(Item selectedItem)
+    {
+        activeItem = selectedItem;
+        if (selectedItem.isItem)
+        {
+            useButtonText.text = "Use";
+        }
+ 
+        if (activeItem.isWeapon || activeItem.isArmour)
+        {
+            useButtonText.text = "Equip";
+        }
+ 
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
+    }
+
+    //
+    public void UseItem()
+    {
+        activeItem.Use(currentActiveBattler);
+        GameManager.instance.SortItems();
+        UpdateUICharInfo();
+    }
+    //
+
+    //
+    public void UpdateUICharInfo()
+    {
+        for (int i = 0; i < charName.Length; i++)
+        {
+            if (activeBattlers.Count > i)
+            {
+                if (activeBattlers[i].isPlayer)
+                {
+                    charName[i].gameObject.SetActive(true);
+                    BattleChar charInfo = activeBattlers[i];                    
+                    charName[i].text = charInfo.charName;
+                    charHP[i].text = Mathf.Clamp(charInfo.currentHP, 0, int.MaxValue) + " / " + charInfo.maxHP;
+                    charMP[i].text = Mathf.Clamp(charInfo.currentMP, 0, int.MaxValue) + " / " + charInfo.maxMP;
+                    GameManager.instance.playerStats[i].currentHP = activeBattlers[i].currentHP;
+                    GameManager.instance.playerStats[i].currentMP = activeBattlers[i].currentMP;
+                }
+                else
+                {
+                    charName[i].gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                charName[i].gameObject.SetActive(true);
+            }
+        }
+    }
+    //
+
+    
+    public void CloseItemMenu()
+    {
+        itemMenu.SetActive(false);
+    }
+
+
 }
