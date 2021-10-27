@@ -18,7 +18,8 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
-        AudioManager.instance.PlaySFX(soundEffect);
+        //disabled the one line below temporarily while firing was happing in RPG battle
+        // AudioManager.instance.PlaySFX(soundEffect);
         
         // wait and then destroy 
         // yield WaitForSeconds(timeUntilDestroyed);
