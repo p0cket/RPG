@@ -12,8 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: 12be2852df0054de885472f58538534e
   - enabled: 1
+    path: Assets/Scenes/DreamEntry.unity
+    guid: d3c923e0023444dfdb5c05d9f2f681bf
+  - enabled: 1
+    path: Assets/Scenes/HomeTown.unity
+    guid: be7339a5b6a214e0c9b472d8ddb1b2dc
+  - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: 5ae31a3f9299e498ba7e4bbc3ded4a45
+  - enabled: 1
+    path: Assets/Scenes/TheWater.unity
+    guid: 045a2c58f0aca43a980875cd802038f7
   - enabled: 1
     path: Assets/Scenes/GrassyArea.unity
     guid: 9e320ae65ab5348e69946f563af28b6f
@@ -26,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DangerousWilds.unity
     guid: f601d216174fe419ea8527ee49aa7e2d
+  - enabled: 1
+    path: Assets/Scenes/Falling.unity
+    guid: ccda15b0096b44dc09972fb038bf6529
   m_configObjects: {}
