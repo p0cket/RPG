@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DreamEntry.unity
     guid: d3c923e0023444dfdb5c05d9f2f681bf
   - enabled: 1
+    path: Assets/Scenes/DreamEntryDW.unity
+    guid: f601d216174fe419ea8527ee49aa7e2d
+  - enabled: 1
     path: Assets/Scenes/HomeTown.unity
     guid: be7339a5b6a214e0c9b472d8ddb1b2dc
   - enabled: 1
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Sample.unity
     guid: 639217aac22364897be783c6cd31109a
-  - enabled: 1
-    path: Assets/Scenes/DangerousWilds.unity
-    guid: f601d216174fe419ea8527ee49aa7e2d
   - enabled: 1
     path: Assets/Scenes/Falling.unity
     guid: ccda15b0096b44dc09972fb038bf6529

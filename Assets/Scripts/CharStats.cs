@@ -74,4 +74,14 @@ public class CharStats : MonoBehaviour
             currentEXP = 0;
         }
     }
+
+    public void AddHealth(int healthToAdd)
+    {
+        currentHP += healthToAdd;
+
+        if(currentHP <= 0)
+        {
+            Debug.Log("Ye dead, son!");
+        }
+    }
 }

@@ -10503,7 +10503,7 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: DreamEntry
+    stringVal: DreamEntryDW
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!1 &653227673
@@ -20762,6 +20762,8 @@ PlayableDirector:
     value: {fileID: 966179474}
   - key: {fileID: 4738580830427178385, guid: 9793b74579307494dbbc25917ea6d647, type: 2}
     value: {fileID: 463748647}
+  - key: {fileID: -6755338889304058641, guid: 9793b74579307494dbbc25917ea6d647, type: 2}
+    value: {fileID: 1473969774}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1382786880
@@ -20869,6 +20871,7 @@ GameObject:
   - component: {fileID: 1473969773}
   - component: {fileID: 1473969772}
   - component: {fileID: 1473969771}
+  - component: {fileID: 1473969774}
   m_Layer: 0
   m_Name: Bloy Sprite
   m_TagString: Untagged
@@ -20949,13 +20952,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473969770}
-  m_LocalRotation: {x: -0, y: -0, z: 0.45403138, w: 0.8909857}
+  m_LocalRotation: {x: 0, y: 0, z: 0.45403138, w: 0.8909857}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 54.005}
+--- !u!95 &1473969774
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473969770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1822267286
 GameObject:
   m_ObjectHideFlags: 0

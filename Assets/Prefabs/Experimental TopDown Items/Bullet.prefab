@@ -134,8 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174b95f8d74bc4bb9a15d0851a62fe48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   rb: {fileID: 1208341799105581571}
   soundEffect: 5
   bulletDamage: 33
   timeUntilDestroyed: 20
+  target: {fileID: 0}
+  moveDirection: {x: 0, y: 0}
