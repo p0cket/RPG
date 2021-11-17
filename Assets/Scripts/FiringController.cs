@@ -7,7 +7,7 @@ public class FiringController : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
-    float fireRate = 1f;
+    public float fireRate = 1f;
     float nextFire;
     // Start is called before the first frame update
     void Start()

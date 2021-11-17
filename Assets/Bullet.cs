@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     //@TODO make a controllable speed slowdown by button press
 
-    public float speed = 5f;
+    public float speed = 80f;
     public Rigidbody2D rb;
     public int soundEffect;
     public int bulletDamage;
@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         
 
         //disabled the one line below temporarily while firing was happing in RPG battle
-        AudioManager.instance.PlaySFX(soundEffect);
+        // AudioManager.instance.PlaySFX(soundEffect);
         
         // target = GameObject.FindObjectOfType<Player>();
         target = GameObject.Find("Player");

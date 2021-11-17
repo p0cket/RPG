@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
+    //grabbing bullets
+    public Bullet[] allBullets;
+
     void Awake() {
         if(instance == null)
         {
@@ -37,6 +40,12 @@ public class PlayerController : MonoBehaviour
             // logic over here
             // myAnim.SetFloat("moveX", theRB.velocity.x);
             // myAnim.SetFloat("moveY", theRB.velocity.y);
+
+            // ~SlowTime functionality below
+            if(Input.GetKeyDown(KeyCode.M))
+            {
+                SlowOthers();
+            }
         } else {
             theRB.velocity = Vector2.zero;
         }
@@ -50,6 +59,28 @@ public class PlayerController : MonoBehaviour
     public void SetBounds (Vector3 botLeft, Vector3 topRight) {
         bottomLeftLimit = botLeft + new Vector3(0.5f, 0.5f, 0f);
         topRightLimit = topRight + new Vector3(-0.5f, -0.5f, 0f);
+    }
+
+    public void SlowOthers ()
+    {
+        Debug.Log("Slowing Others");
+        allBullets = FindObjectsOfType<Bullet>();
+        Debug.Log(allBullets);
+        // Either
+        // allBullets.speed = allBullets.speed * 0.8f;
+        //or
+        for(int i = 0; i < allBullets.Length; i++)
+        {
+            Debug.Log("Slowing Speed" + i);
+            // allBullets[i].moveDirection = (target.transform.position - transform.position).normalized * speed;
+            // allBullets[i].moveDirection = (allBullets[i].target.transform.position - allBullets[i].transform.position).normalized * allBullets[i].speed;
+            allBullets[i].moveDirection = (allBullets[i].target.transform.position - allBullets[i].transform.position).normalized * allBullets[i].speed;
+
+
+
+            // allBullets[i].speed = allBullets[i].speed * 0.1f;
+
+        }
     }
     
 }

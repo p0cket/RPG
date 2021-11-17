@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1208341799105581571}
   - component: {fileID: 1208341799105581630}
   - component: {fileID: -7165233650037766285}
+  - component: {fileID: -8053896766721156246}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -134,10 +135,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174b95f8d74bc4bb9a15d0851a62fe48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   rb: {fileID: 1208341799105581571}
   soundEffect: 5
   bulletDamage: 33
   timeUntilDestroyed: 20
   target: {fileID: 0}
   moveDirection: {x: 0, y: 0}
+--- !u!95 &-8053896766721156246
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208341799105581570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b1a5ef5647434d61a0aef51cae7ce1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
