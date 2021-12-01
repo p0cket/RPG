@@ -136,12 +136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  bulletTransform: {fileID: 0}
   rb: {fileID: 1208341799105581571}
   soundEffect: 5
   bulletDamage: 33
   timeUntilDestroyed: 20
   target: {fileID: 0}
   moveDirection: {x: 0, y: 0}
+  impactEffect: {fileID: 2387081495143560408, guid: 468450d6602e14b70b079354ebcefea4, type: 3}
 --- !u!95 &-8053896766721156246
 Animator:
   serializedVersion: 3

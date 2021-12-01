@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     //@TODO make a controllable speed slowdown by button press
 
     public float speed = 80f;
+
+    // grab the transform of the bullet and turn it towards the player
+    public Transform bulletTransform;
     public Rigidbody2D rb;
     public int soundEffect;
     public int bulletDamage;
@@ -18,6 +21,10 @@ public class Bullet : MonoBehaviour
     // public Player target;
     public Vector2 moveDirection;
 
+    public GameObject impactEffect;
+
+    public string huntDown = "Player";
+
 
     // void Awake(){
     //   Destroy(gameObject, timeUntilDestroyed);
@@ -27,19 +34,24 @@ public class Bullet : MonoBehaviour
         //just uncomment this if it doesn't work
         // rb.velocity = transform.right * speed;
 
-        
+        //@TODO change the rotation of bullet so it aims for target with bulletTransform. 
 
         //disabled the one line below temporarily while firing was happing in RPG battle
         // AudioManager.instance.PlaySFX(soundEffect);
         
         // target = GameObject.FindObjectOfType<Player>();
-        target = GameObject.Find("Player");
 
-        // Debug.Log("Target Position" + target.transform.position);
-        // Debug.Log("Bullet Position" + transform.position);
+        if(huntDown == "Player")
+        {
+            target = GameObject.Find("Player");
 
-        moveDirection = (target.transform.position - transform.position).normalized * speed;
-        rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
+            // Debug.Log("Target Position" + target.transform.position);
+            // Debug.Log("Bullet Position" + transform.position);
+
+            moveDirection = (target.transform.position - transform.position).normalized * speed;
+            rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
+        }
+
 
         // wait and then destroy 
         // yield WaitForSeconds(timeUntilDestroyed);
@@ -63,9 +75,13 @@ public class Bullet : MonoBehaviour
             // now deal damage to the character
             // BattleManager.instance.DealDamage(selectedTarget, bulletDamage);
             // BattleManager.instance.activeBattlers[target].currentHP -= bulletDamage;
-            Debug.Log(GameManager.instance.playerStats[0].charName + "hit with" + bulletDamage + "Damage to his currentHP:" + GameManager.instance.playerStats[0].currentHP);
+
+            // Debug.Log(GameManager.instance.playerStats[0].charName + "hit with" + bulletDamage + "Damage to his currentHP:" + GameManager.instance.playerStats[0].currentHP);
             GameManager.instance.playerStats[0].AddHealth(-22);
-            Debug.Log( "Now health is:" + GameManager.instance.playerStats[0].currentHP);
+            GameObject explosionEffect = Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(explosionEffect, 3f);
+            CameraController.instance.StartShake(.2f, .1f);
+            // Debug.Log( "Now health is:" + GameManager.instance.playerStats[0].currentHP);
             HUD.instance.UpdateHUD();
 
 
