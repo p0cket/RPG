@@ -15,9 +15,21 @@ public class MoveBackAndForth : MonoBehaviour
      private float delay_start;
 
      public bool automatic;
+     public bool activate = true;
+
+     public static MoveBackAndForth instance;
 
      void Start()
      {
+        // Create instance
+        if(instance == null)
+        {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+
+
         if(points.Length > 0)
         {
             current_target = points[0];
@@ -27,14 +39,17 @@ public class MoveBackAndForth : MonoBehaviour
 
      void Update()
      {
-         if(transform.position != current_target)
-         {
-             MovePlatform();
+         if(activate){
+            if(transform.position != current_target)
+            {
+                MovePlatform();
+            }
+            else
+            {
+                UpdateTarget();
+            }    
          }
-         else
-         {
-             UpdateTarget();
-         }
+
      }
 
      void MovePlatform()
