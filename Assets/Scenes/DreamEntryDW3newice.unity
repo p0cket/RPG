@@ -3969,6 +3969,7 @@ MonoBehaviour:
   - {fileID: 1736638671}
   - {fileID: 701465481}
   - {fileID: 17916050}
+  nullCount: 0
 --- !u!95 &213886691
 Animator:
   serializedVersion: 3
