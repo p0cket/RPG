@@ -16,6 +16,7 @@ public class EnemyActions : MonoBehaviour
     public int phase;
 
     public GameObject[] iceBlocks;
+    public int nullCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +36,24 @@ public class EnemyActions : MonoBehaviour
 
         for(int i = 0; i < iceBlocks.Length; i++)
         {
-            Debug.Log(iceBlocks[i]);
+
+            // Debug.Log(iceBlocks[i]);
+            if(iceBlocks[i] == null)
+            {
+                nullCount++;
+            }
+            
         }
+        
+        Debug.Log("nullCount: " + nullCount + " and iceBlocks.Length: " + iceBlocks.Length);
+        if(nullCount >= iceBlocks.Length)
+        {
+            Debug.Log("All Blocks Are Gone");
+            //change the phase to the next one. phase 2! phase += 1;
+        }
+
+        nullCount = 0;
+
         //if every iceBlock[i] == null, set to next phase
 
 
