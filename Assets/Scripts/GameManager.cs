@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public int[] numberOfItems;
     public Item[] referenceItems;
 
+    public bool filledMeter = false;
+
     public int currentGold;
 
     void Start()
