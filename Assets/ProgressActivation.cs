@@ -11,30 +11,17 @@ public class ProgressActivation : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            if(progressBar.usesFilledMeter)
-            {
-                UnfillMeter();
-            } else
+            if(GameManager.instance.filledMeter != true)
             {
                 FillMeter();
             }
         }
     }
-    public void UnfillMeter()
-    {
-        progressBar.IncrementProgress(-0.2f);
-        //if fully unused, set "filled" to false, and do a thing
-
-        //commented out for now
-        // progressBar.UseFill();
-    }
     public void FillMeter()
     {
-        // if not, fill the bucket
         // Debug.Log("Entered += 0.2f");
         progressBar.IncrementProgress(0.2f);
         // if filled, Create a variable that is "Filled"
     }
 }
 
-            // progressBar.SetActive(true);
