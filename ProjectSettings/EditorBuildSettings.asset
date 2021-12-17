@@ -12,14 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: 12be2852df0054de885472f58538534e
   - enabled: 1
-    path: Assets/Scenes/DreamEntry.unity
-    guid: d3c923e0023444dfdb5c05d9f2f681bf
-  - enabled: 1
-    path: Assets/Scenes/Demo Levels/Falling.unity
+    path: Assets/Scenes/Demo Levels/1-Falling.unity
     guid: ccda15b0096b44dc09972fb038bf6529
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/Ex Showdown.unity
+    path: Assets/Scenes/Demo Levels/2-Land.unity
+    guid: 8d3fe9cd68f9f474bbc4f03511a72b62
+  - enabled: 1
+    path: Assets/Scenes/Demo Levels/3-Dream.unity
+    guid: 5e968fd77613b4006abbf5e922a91a70
+  - enabled: 1
+    path: Assets/Scenes/Demo Levels/4-Ex Showdown.unity
     guid: f601d216174fe419ea8527ee49aa7e2d
+  - enabled: 1
+    path: Assets/Scenes/DreamEntry.unity
+    guid: d3c923e0023444dfdb5c05d9f2f681bf
   - enabled: 1
     path: Assets/Scenes/HomeTown.unity
     guid: be7339a5b6a214e0c9b472d8ddb1b2dc

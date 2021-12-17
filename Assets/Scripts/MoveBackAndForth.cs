@@ -5,6 +5,8 @@ using UnityEngine;
 public class MoveBackAndForth : MonoBehaviour
 {
      public Vector3[] points;
+     public Vector3[] phase1points;
+     public Vector3[] phase2points;
      public int point_number = 0;
      public Vector3 current_target;
 

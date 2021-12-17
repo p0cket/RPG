@@ -19,7 +19,7 @@ public class Indicator : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        Debug.Log("Enter: " + other.tag);
+        // Debug.Log("Enter: " + other.tag);
         if(other.tag == "Player")
         {
             objectToAppear.SetActive(true);
@@ -29,7 +29,7 @@ public class Indicator : MonoBehaviour
 
     void OnTriggerExit2D (Collider2D other)
     {
-        Debug.Log("Exit: " + other.tag);
+        // Debug.Log("Exit: " + other.tag);
         if(other.tag == "Player")
         {
             objectToAppear.SetActive(false);
