@@ -17,6 +17,9 @@ public class DepletionBar : MonoBehaviour
 
     public Vector3 sliderSize = new Vector3(0.02f, 0.03f, 1f);
 
+    [Header("Object To Destroy")]
+    public GameObject objectToDestroy;
+
     void Start()
     {
     }
@@ -53,6 +56,18 @@ public class DepletionBar : MonoBehaviour
     {
         Debug.Log("@_@ Used Fill, setting fillMeter to false");
         GameManager.instance.filledMeter = false;
+        //Destroy the meter and the fire
+        if(objectToDestroy)
+        {
+            Debug.Log("Destroying the object");
+            Destroy(objectToDestroy);
+        }
+        else
+        {
+            Debug.Log("No object to destroy");
+        }
+        
+        
 
         // if you want to reset the progress, use this below
         // slider.value = 1f;

@@ -6,6 +6,9 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject fireBlastPrefab;
+    // Mega Death Rocket
+
 
     // Update is called once per frame
     void Update()
