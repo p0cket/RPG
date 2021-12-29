@@ -19,7 +19,9 @@ public class RunAnimation : MonoBehaviour
         Debug.Log("Enter: " + other.tag);
         if(other.tag == "Player")
         {
-            PlayAnimation();
+            Debug.Log(other.name + " walked in");
+            // PlayAnimation();
+            anim.enabled = true;
         }
         // Debug.Log(other.name);
     }
