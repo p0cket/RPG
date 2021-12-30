@@ -847,7 +847,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &30535876
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -875,7 +875,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &30535877
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -902,7 +902,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &30535878
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -929,7 +929,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &30535879
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -956,7 +956,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &30535880
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -983,7 +983,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &30535881
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3600,6 +3600,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7566879465058289876, guid: 247333167eea14cd2a541b059f0f1f42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566879465058289886, guid: 247333167eea14cd2a541b059f0f1f42, type: 3}
+      propertyPath: instantComplete
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7566879465058289890, guid: 247333167eea14cd2a541b059f0f1f42, type: 3}
