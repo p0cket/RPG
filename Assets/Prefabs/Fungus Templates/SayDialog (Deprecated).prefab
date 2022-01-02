@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7566879465058289884}
   - component: {fileID: 7566879465058289885}
   m_Layer: 5
-  m_Name: SayDialog
+  m_Name: SayDialog (Deprecated)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

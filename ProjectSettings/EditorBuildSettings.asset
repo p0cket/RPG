@@ -18,7 +18,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo Levels/2-Land.unity
     guid: 8d3fe9cd68f9f474bbc4f03511a72b62
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/3-Dream.unity
+    path: Assets/Scenes/Demo Levels/3a-Cloudsly.unity
+    guid: 70613ee809f6249debd58b648fe9fecf
+  - enabled: 1
+    path: Assets/Scenes/Demo Levels/3c-Danger.unity
+    guid: 7a55950bbb0064cbc9c4f30daa5d70f1
+  - enabled: 1
+    path: Assets/Scenes/Demo Levels/X3-NotBreakingUp.unity
+    guid: fedbc020f56004460816986c49164616
+  - enabled: 1
+    path: Assets/Scenes/Demo Levels/P3-Dream.unity
     guid: 5e968fd77613b4006abbf5e922a91a70
   - enabled: 1
     path: Assets/Scenes/Demo Levels/4-Ex Showdown.unity
@@ -27,10 +36,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo Levels/DemoMainMenu.unity
     guid: 018022d35776d4c648ea27d609c474e1
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/X2-Shay.unity
+    path: Assets/Scenes/Demo Levels/3b-Shay.unity
     guid: 7f66006ce37614ea7b925d253dcf6a09
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/X-Yosh.unity
+    path: Assets/Scenes/Demo Levels/3d-Yosh.unity
     guid: f601d216174fe419ea8527ee49aa7e2d
   - enabled: 1
     path: Assets/Scenes/DreamEntry.unity
@@ -42,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Town.unity
     guid: 5ae31a3f9299e498ba7e4bbc3ded4a45
   - enabled: 1
-    path: Assets/Scenes/TheWater.unity
+    path: Assets/Scenes/Demo Levels/TheWater.unity
     guid: 045a2c58f0aca43a980875cd802038f7
   - enabled: 1
     path: Assets/Scenes/GrassyArea.unity

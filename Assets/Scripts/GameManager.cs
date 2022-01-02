@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public int currentGold;
 
+    public float slowdownsLeft = 4f;
+    public float maxSlowdowns = 4f;
+
     void Start()
     {
         instance = this;

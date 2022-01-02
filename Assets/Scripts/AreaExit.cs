@@ -41,8 +41,8 @@ public class AreaExit : MonoBehaviour
             shouldLoadAfterFade = true;
             GameManager.instance.fadeBetweenAreas = true;
             UIFade.instance.FadeToBlack();
-
             PlayerController.instance.areaTransitionName = areaTransitionName;
+            Debug.Log("Loading: "+areaToLoad+ " at areaTransition: "+areaTransitionName);
         }
     }
 }

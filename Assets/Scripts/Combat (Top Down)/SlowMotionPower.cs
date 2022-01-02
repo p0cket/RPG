@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class SlowMotionPower : MonoBehaviour
 {
-
     public float slowdownFactor = 0.05f;
     public float slowdownLength = 10f;
 
     public float freezeDuration = 4.09f;
 
+    public float refillSlowdownsSpeed = 0.5f;
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            DoSlowmotion();
-            // FreezeTime(freezeDuration);
+            Debug.Log("We can't use slowdowns because it is at: " + GameManager.instance.slowdownsLeft);
+            if(GameManager.instance.slowdownsLeft > 1){
+                Debug.Log("slowdownsLeft " + GameManager.instance.slowdownsLeft);
+                DoSlowmotion();
+                GameManager.instance.slowdownsLeft -= 1;
+                // FreezeTime(freezeDuration);
+            }
         }
         Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
         Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
+
+        if(GameManager.instance.slowdownsLeft < GameManager.instance.maxSlowdowns)
+        {
+            GameManager.instance.slowdownsLeft += refillSlowdownsSpeed * Time.deltaTime;
+        }
     }
 
     public void DoSlowmotion()

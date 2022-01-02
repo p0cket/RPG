@@ -8,6 +8,7 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject player;
     public GameObject gameMan;
     public GameObject soundMan;
+    public GameObject sanityMeter;
     void Awake()
     {
         if(UIFade.instance == null){
@@ -22,10 +23,8 @@ public class EssentialsLoader : MonoBehaviour
         if(AudioManager.instance == null){
             Instantiate(soundMan);
         }
-    }
-
-    void Update()
-    {
-        
+        // if(SanitySlider.instance == null){
+        //     Instantiate(sanityMeter);
+        // }
     }
 }

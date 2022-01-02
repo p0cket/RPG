@@ -7,13 +7,39 @@ public class ProgressActivation : MonoBehaviour
 {
     public ProgressBar progressBar;
     // Start is called before the first frame update
+    public bool canFill;
+
+    void Update()
+    {
+        if(canFill)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                FillMeter();
+            }
+        }
+    }
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.name == "Player")
         {
             if(GameManager.instance.filledMeter != true)
             {
-                FillMeter();
+                canFill = true;
+                // if(Input.GetKeyDown(KeyCode.E))
+                // {
+                //     FillMeter();
+                // }
+            }
+        }
+    }
+    void OnTriggerExit2D (Collider2D other)
+    {
+        if (other.name == "Player")
+        {
+            if(GameManager.instance.filledMeter != true)
+            {
+                canFill = false;
             }
         }
     }
