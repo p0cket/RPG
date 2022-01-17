@@ -24,13 +24,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo Levels/3c-Danger.unity
     guid: 7a55950bbb0064cbc9c4f30daa5d70f1
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/X3-NotBreakingUp.unity
+    path: Assets/Scenes/Demo Levels/4a-NotBreakingUp.unity
     guid: fedbc020f56004460816986c49164616
   - enabled: 1
     path: Assets/Scenes/Demo Levels/P3-Dream.unity
     guid: 5e968fd77613b4006abbf5e922a91a70
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/4-Ex Showdown.unity
+    path: Assets/Scenes/Demo Levels/4c-Ex Showdown.unity
     guid: 1aeb6d1eac9a644158d9a6caf653e033
   - enabled: 1
     path: Assets/Scenes/Demo Levels/DemoMainMenu.unity
@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Town.unity
     guid: 5ae31a3f9299e498ba7e4bbc3ded4a45
   - enabled: 1
-    path: Assets/Scenes/Demo Levels/TheWater.unity
+    path: Assets/Scenes/Demo Levels/4b-TheWater.unity
     guid: 045a2c58f0aca43a980875cd802038f7
   - enabled: 1
     path: Assets/Scenes/GrassyArea.unity

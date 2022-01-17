@@ -43,7 +43,6 @@ public class CameraController : MonoBehaviour
         {
             // StartShake(shakeTimeRemaining, shakePower);
             StartShake(0.25f, 0.05f);
-
         }
     }
 

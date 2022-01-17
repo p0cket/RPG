@@ -9,6 +9,7 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject gameMan;
     public GameObject soundMan;
     public GameObject sanityMeter;
+    // public GameObject focusMeter;
     void Awake()
     {
         if(UIFade.instance == null){

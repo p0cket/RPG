@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public GameObject playerDamagedEffect;
     public bool damagesWhenTouched;
 
+
+
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
         if (hitInfo.name == "Player")
@@ -26,11 +28,17 @@ public class Enemy : MonoBehaviour
             // CameraController.instance.StartShake(.2f, .1f);
             // // Debug.Log( "Now health is:" + GameManager.instance.playerStats[0].currentHP);
             // HUD.instance.UpdateHUD();
-        }
+        } 
+        Debug.Log("name is: "+ hitInfo.tag);
+        // else if (hitInfo.tag == "PlayerAttack")
+        // {
+        //     TakeDamage(5);
+        // }
     }
 
     public void TakeDamage (int damage)
     {
+        Debug.Log("Enemy is taking "+ damage +" damage from its' health of " + health);
         health -= damage;
         Instantiate(enemyDamagedEffect, transform.position, Quaternion.identity);
 

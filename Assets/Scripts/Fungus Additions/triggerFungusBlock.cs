@@ -16,6 +16,9 @@ public class triggerFungusBlock : MonoBehaviour
 
     //[SerializeField]
     public string blockName;
+
+    public bool triggersOnce = false;
+    public bool triggerFlag = false;
     
 
     // Start is called before the first frame update
@@ -41,8 +44,20 @@ public class triggerFungusBlock : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
             if(blockName != null) {
-                Debug.Log("Flowchart Block Triggered. It will execute the selected block now");
-                flowChart.ExecuteBlock(blockName);
+                if(triggersOnce)
+                {
+                    // trigger once logic
+                    if(triggerFlag != true)
+                    {
+                    Debug.Log("F Block Triggered once. It will execute block: "+ blockName +" now");
+                    flowChart.ExecuteBlock(blockName);
+                    triggerFlag = true;
+                    }
+                } else {
+                    // triggers every time logic
+                    Debug.Log("Flowchart Block Triggered. It will execute block: "+ blockName +" now");
+                    flowChart.ExecuteBlock(blockName);
+                }
             }
             else {
                 Debug.Log("Please enter the block name");

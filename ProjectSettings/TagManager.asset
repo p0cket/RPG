@@ -7,6 +7,8 @@ TagManager:
   - CloudDestroy
   - Water
   - IceBlock
+  - Cloudsly
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
