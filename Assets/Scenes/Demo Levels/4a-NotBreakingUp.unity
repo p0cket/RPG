@@ -5529,7 +5529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &260331603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5589,7 +5589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260331602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.52, y: -6.73, z: 0}
+  m_LocalPosition: {x: -12.27, y: -1.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28614,6 +28614,7 @@ GameObject:
   - component: {fileID: 650596880}
   - component: {fileID: 650596881}
   - component: {fileID: 650596882}
+  - component: {fileID: 650596883}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -28729,7 +28730,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 650596871}
   selectedCommands:
-  - {fileID: 650596882}
+  - {fileID: 650596883}
   variables: []
   description: 
   stepPause: 0
@@ -28817,6 +28818,7 @@ MonoBehaviour:
   - {fileID: 650596874}
   - {fileID: 650596882}
   - {fileID: 650596880}
+  - {fileID: 650596883}
   - {fileID: 650596881}
   suppressAllAutoSelections: 0
 --- !u!114 &650596872
@@ -29091,7 +29093,7 @@ MonoBehaviour:
     floatVal: 0
 --- !u!114 &650596882
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -29106,6 +29108,27 @@ MonoBehaviour:
   _targetGameObject:
     gameObjectRef: {fileID: 0}
     gameObjectVal: {fileID: 1184681691}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &650596883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650596864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 260331602}
   activeState:
     booleanRef: {fileID: 0}
     booleanVal: 1

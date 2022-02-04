@@ -9,7 +9,7 @@ public class EnemyActions : MonoBehaviour
     //  -attack
     //  -Speak
     //  -animate
-// //////////////////////////////////////////////////
+    // //////////////////////////////////////////////////
     // if taken damage or another trigger (Like hitting walls), trigger other phase.
 
     public string[] actions;
@@ -29,9 +29,7 @@ public class EnemyActions : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.N))
         {
-            phase += 1;
-            CheckPhase();
-
+            ChangePhase();
         }
 
         for(int i = 0; i < iceBlocks.Length; i++)
@@ -57,67 +55,25 @@ public class EnemyActions : MonoBehaviour
         nullCount = 0;
 
         //if every iceBlock[i] == null, set to next phase
-
-
-        // switch (phase)
-        // {
-        // case 1:
-        //     // Just Move
-        //     // Debug.Log("Phase 1: Move");
-        //     break;
-        // case 2:
-        //     // Move and shoot
-        //     // Debug.Log("Phase 2: Shoot");
-        //     // Deactivate Movement
-        //     MoveBackAndForth.instance.activate = false;
-        //     FiringController.instance.canFire = false;
-        //     break;
-        // case 3:
-        //     // Debug.Log("Phase 3: Something Else");
-        //     // Movement and no Fire
-        //     MoveBackAndForth.instance.activate = true;
-        //     FiringController.instance.canFire = false;
-        //     break;
-        // case 4:
-        //     // Debug.Log("Phase 4");
-        //     // No Movement and yes Fire
-        //     MoveBackAndForth.instance.activate = false;
-        //     FiringController.instance.canFire = true;
-        //     break;
-        // case 5:
-        //     // Debug.Log("Phase 5");
-        //     // Yes Movement & Yes Fire
-        //     MoveBackAndForth.instance.activate = true;
-        //     FiringController.instance.canFire = true;
-        //     break;
-        // case 6:
-        //     // Debug.Log("Phase 6");
-        //     // Deactivate Movement
-        //     MoveBackAndForth.instance.activate = false;
-        //     break;
-        // case 7:
-        //     // Debug.Log("Default");
-        //     break;
-        // }
     }
 
     public void CheckPhase()
     {
-         switch (phase)
+        switch (phase)
         {
-        case 1:
             // Just Move
-            Debug.Log("Phase 1: Move'n'shoot");
-            MoveBackAndForth.instance.points = MoveBackAndForth.instance.phase1points;
-            break;
-        case 2:
-            // Move and shoot
+            // MoveBackAndForth.instance.points = MoveBackAndForth.instance.phase1points;
+        case 1:
             Debug.Log("Phase 2: No Move No Shoot");
             // Deactivate Movement
             MoveBackAndForth.instance.activate = false;
-            FiringController.instance.canFire = false;
+            // FiringController.instance.canFire = false;
+            // testing firing, and even increase firespeed
+            FiringController.instance.canFire = true;
+            FiringController.instance.fireRate = FiringController.instance.fireRate / 4f;
+            StartCoroutine(WaitingTime(11f));
             break;
-        case 3:
+        case 2:
             Debug.Log("Phase 3: Just Move 5x");
             // 5x Movement and no Fire
             MoveBackAndForth.instance.activate = true;
@@ -126,14 +82,14 @@ public class EnemyActions : MonoBehaviour
             MoveBackAndForth.instance.speed = MoveBackAndForth.instance.speed * 5;
             MoveBackAndForth.instance.points = MoveBackAndForth.instance.phase2points;
             break;
-        case 4:
+        case 3:
             Debug.Log("Phase 4: no Move, yes Fire");
-            // No Movement and yes Fire
+            // No Movement and yes Fire 5x speed
             MoveBackAndForth.instance.activate = false;
             FiringController.instance.canFire = true;
             FiringController.instance.fireRate = FiringController.instance.fireRate / 4f;
             break;
-        case 5:
+        case 4:
             Debug.Log("Phase 5: Reg Move, yes Fire");
             // Yes Movement & Yes Fire
             MoveBackAndForth.instance.activate = true;
@@ -142,14 +98,27 @@ public class EnemyActions : MonoBehaviour
             MoveBackAndForth.instance.points = MoveBackAndForth.instance.phase1points;
             MoveBackAndForth.instance.speed = MoveBackAndForth.instance.speed / 5;
             break;
-        case 6:
+        case 5:
             Debug.Log("Phase 6");
             // Deactivate Movement
             MoveBackAndForth.instance.activate = false;
             break;
-        case 7:
+        case 6:
             Debug.Log("Default");
             break;
         }
+    }
+    public void ChangePhase()
+    {
+        phase += 1;
+        CheckPhase();
+    }
+
+    IEnumerator WaitingTime(float seconds)
+    {
+        Debug.Log("starting co-ruitine!");
+        yield return new WaitForSeconds(seconds);
+        ChangePhase();
+        Debug.Log("Goodbye world!");
     }
 }
