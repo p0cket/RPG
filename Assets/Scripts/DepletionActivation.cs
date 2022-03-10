@@ -24,6 +24,11 @@ public class DepletionActivation : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Unfills the bar gradually. Currently just one line.
+    /// <br/>
+    /// "depletionBar.IncrementProgress(-0.2f);"
+    /// </summary>
     public void UnfillMeter()
     {
         depletionBar.IncrementProgress(-0.2f);

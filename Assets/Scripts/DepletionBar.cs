@@ -47,11 +47,26 @@ public class DepletionBar : MonoBehaviour
             gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
         }
     }
+
+    /// <summary>
+    /// adds/subtracts from the progress. 
+    /// Needs a float parameter
+    /// <br/>
+    /// "targetProgress = slider.value + newProgress;"
+    /// </summary>
+    /// <param name="newProgress">Amount of progress to add/subtract</param>
+    /// <returns></returns>
     public void IncrementProgress(float newProgress)
     {
         targetProgress = slider.value + newProgress;
     }
 
+    /// <summary>
+    /// Use the Fill. Set filledMeter to false, 
+    /// and destroy an object if `objectToDestroy` is set to false
+    /// <br/>
+    /// "GameManager.instance.filledMeter = false;"
+    /// </summary>
     public void UseFill()
     {
         Debug.Log("@_@ Used Fill, setting fillMeter to false");
